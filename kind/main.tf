@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     kind = {
-      source = "tehcyx/kind"
+      source  = "tehcyx/kind"
       version = "0.0.12"
     }
   }
@@ -10,10 +10,10 @@ terraform {
 provider "kind" {}
 
 resource "kind_cluster" "default" {
-  name = "kind-cluster-1"
+  name           = "kind-cluster-1"
   wait_for_ready = true
   kind_config {
-    kind = "Cluster"
+    kind        = "Cluster"
     api_version = "kind.x-k8s.io/v1alpha4"
 
     node {
@@ -21,17 +21,17 @@ resource "kind_cluster" "default" {
     }
 
     node {
-      role = "worker"
+      role  = "worker"
       image = "kindest/node:v1.23.4"
     }
 
     node {
-      role = "worker"
+      role  = "worker"
       image = "kindest/node:v1.23.4"
     }
 
     node {
-      role = "worker"
+      role  = "worker"
       image = "kindest/node:v1.23.4"
     }
   }
